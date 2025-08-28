@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Demo - Interactive Profile</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    #hidden-section { display: none; }
+  </style>
+</head>
+<body>
+  <h1 style="color: blueviolet;">My Profile</h1>
+  <h2>Sharwan Kumar Sah</h2>
+  <p>I am Sharwan Kumar Sah, a student at the University of Sunderland.</p>
+  <img src="profile.jpg" width="150" height="150" alt="My photo"><br><br>
+  <button id="toggle-btn">Show/Hide Skills</button><br><br>
+  <div id="hidden-section">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML </li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Bootstrap</li>
+    </ul>
+  </div>
+  <form id="contact-form">
+    <input type="text" id="name" placeholder="Your Full Name">
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+  <script>
+    const btn = document.getElementById('toggle-btn');
+    const section = document.getElementById('hidden-section');
+    btn.addEventListener('click', () => {
+      section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    });
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      if (name === '') {
+        alert('Please enter your name!');
+      } else {
+        alert('Form submitted successfully!');
+      }
+    }
+  </script>
+</body>
+</html>
